@@ -25,7 +25,7 @@ const Hero = () => {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: "easeInOut"
+      ease: [0.42, 0, 0.58, 1]
     }
   };
 
@@ -139,48 +139,16 @@ const Hero = () => {
             animate={floatingAnimation}
             className="relative z-10"
           >
-            <div className="w-80 h-80 mx-auto relative">
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#d957ff] to-[#14b8a6] rounded-full blur-xl opacity-30"
-                className="absolute inset-0 bg-gradient-to-r from-[#3877ff] to-[#14b8a6] rounded-full blur-xl opacity-30"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <div className="absolute inset-4 bg-gradient-to-br from-gray-900 to-black rounded-full flex items-center justify-center">
-                <div className="text-6xl">🤖</div>
+            <div className="w-80 h-80 mx-auto relative flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#3877ff] to-[#14b8a6] rounded-full blur-xl opacity-30"></div>
+              <div className="absolute inset-4 bg-gradient-to-br from-gray-900 to-black rounded-full flex items-center justify-center overflow-hidden">
+                <img src="/paikshal.jpg" alt="Paikshal" className="w-full h-full object-cover rounded-full" />
               </div>
             </div>
           </motion.div>
 
           {/* Floating particles */}
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-[#d957ff] rounded-full"
-              className="absolute w-2 h-2 bg-[#3877ff] rounded-full"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [-20, 20, -20],
-                opacity: [0.5, 1, 0.5],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
+          {/* Floating dots removed for clean look */}
         </motion.div>
       </div>
 
