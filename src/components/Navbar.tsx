@@ -26,9 +26,8 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 w-full z-40 transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-lg' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg' : 'bg-transparent'
+        }`}
       style={isScrolled ? { backgroundColor: 'rgba(38, 37, 37, 0.8)' } : {}}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -41,7 +40,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             style={{ fontFamily: 'Sora, sans-serif' }}
           >
-            Paikshal P.
+
           </motion.div>
 
           {/* Desktop Navigation */}
