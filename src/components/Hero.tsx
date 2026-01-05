@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Download, Mail, ExternalLink, ChevronDown } from 'lucide-react';
 
@@ -25,7 +25,7 @@ const Hero = () => {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: [0.42, 0, 0.58, 1]
+      ease: "easeInOut"
     }
   };
 
@@ -53,7 +53,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-bold text-white leading-tight"
             style={{ fontFamily: 'Sora, sans-serif' }}
           >
@@ -93,7 +93,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 3, duration: 0.8 }}
           >
-            <motion.button
+            <motion.a
+              href="https://menu-dashboard-python.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
@@ -102,7 +105,7 @@ const Hero = () => {
             >
               <ExternalLink size={20} />
               View Projects
-            </motion.button>
+            </motion.a>
 
             <motion.button
               variants={buttonVariants}
